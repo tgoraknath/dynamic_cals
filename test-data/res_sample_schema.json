@@ -1,0 +1,25 @@
+{
+  "type": "object",
+  "required": ["basicProfile"],
+  "properties": {
+    "basicProfile": {
+      "type": "object",
+      "required": ["caseNumber", 
+                           "contactEmail"
+                         ],
+      "properties": {
+        "caseNumber":{
+             "type":"string"
+         },
+       "contactEmail":{"type":"string", 
+             "minLength": 1}
+      }
+    },
+    "extendedProfile": {
+       "type": "object",
+       "properties": {
+        "localDescription":{"type":"string"}
+      }
+    }
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/adsk_automation",
+  "definitions": {
+    "adsk_automation":{
+     "type": "object",
+     "required": ["api_endpoint", "api_spec"],
+     "properties": {
+       "api_endpoint": {"$ref": "#/definitions/api_endpoint"},
+       "api_spec": {"$ref": "#/definitions/api_spec"},      
+       "headers": {"$ref": "#/definitions/headers", "default": {}},      
+       "smart_commits": {"$ref": "#/definitions/smart_commits", "default": {}},
+       "generate_proxy": {
+         "type": "boolean", "default":false
+        },
+       "delete_previous_executions": {
+         "type": "boolean", "default":false
+       },
+       "required_oauth": {
+         "type": "boolean", "default":false
+        }
+      }
+    },
+    "api_endpoint": {
+       "type": "object",
+       "required": ["host", "path_params"],
+       "properties": {
+         "host": {
+           "type": "string", "format": "url"
+          },
+         "path_params": {
+           "type": "string"
+          },
+          "query_params": {
+           "type": "string"
+          }
+        }
+      },
+    "api_spec": {
+       "type": "object",
+       "required": ["method"],
+       "properties": {
+         "method": {
+           "type": "string", "enum":["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"], "default":"GET"
+          },
+          "response_code": {
+            "type": "integer", "default":200
+          },
+          "array": {
+            "type": "boolean", "default":false
+          },
+          "strict": {
+           "type": "boolean", "default":false
+          },
+          "insert_defaults": {
+            "type": "boolean", "default":false
+          },
+          "controls": {
+            "$ref": "#/definitions/api_controls", "default": {}
+          }
+        } 
+      },
+    "api_controls": {
+       "type": "object",
+       "properties": {
+         "purge_cycles": {
+           "type": "boolean", "default": false
+          },
+          "delay_minutes": {
+           "type": "integer", "default": 0, "enum":[-1, 0, 3, 5]
+          },
+          "tag": {
+            "$ref": "#/definitions/tag_users", "default": {}
+          }
+        } 
+      },
+    "tag_users": {
+       "type": "object",
+       "properties": {
+         "collaborators": {
+           "type": "boolean", "default": false
+          },
+         "users": {
+           "type": "array", "default": [],
+           "items":[{"type":"string"}]
+          } 
+        } 
+      },  
+    "headers": {
+       "type": "object",
+       "required": ["access_token"],
+       "properties": {
+         "access_token": {
+           "type": "string", "default": ""
+          }
+        } 
+      },
+    "smart_commits": {
+       "type": "object",
+       "required": ["jira_stories", "comment"],
+       "properties": {
+         "jira_stories": {
+           "type": "array",
+           "default": [""],
+           "minItems":1,
+           "maxItems":10,
+           "items": {
+             "type": "string"
+            }
+          },
+          "comment": {
+            "type": "string", "default": ""
+          }
+        } 
+      }
+  }
+}

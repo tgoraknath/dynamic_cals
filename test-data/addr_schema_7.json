@@ -1,0 +1,27 @@
+{
+  "type": "object",
+  "required": ["addrLine1", "city", "state","postalCode"],
+  "properties": {
+    "addrLine1": {
+      "type": "string"
+    },
+    "city": {
+    "type": "string"
+    },
+    "state": {
+      "type": "string"
+    },
+    "postalCode": {
+      "type": "string", 
+      "pattern": "^\d{5}(?:[-\s]\d{4})?$"
+    },
+    "addrLine2": {
+      "type": "string"
+    },
+    "country": {
+      "type": "string", 
+      "minLength": 2, 
+      "maxLength": 2
+    }
+  }
+}

@@ -1,0 +1,19 @@
+[
+    {
+        "basicProfile": {
+            "caseNumber": "11118741",
+            "contactEmail": "",
+            "description": "Provision Credits Failure for user - OxygenId: RYJGQ96HNUCY, SubscriptionId: 36015078458, Error: WebServiceException: Could not send Message.",
+            "subject": "Pelican - Error provisioning Cloud Credits for user",
+            "priority": "2 - Urgent",
+            "caseTopic": "Orders",
+            "statusReason": "Open - Unassigned",
+            "resolutionSLA": null,
+            "creationDate": "2017-04-18T00:43:58.000Z",
+            "lastModifiedDate": "2017-10-06T04:44:25.000Z"
+        },
+        "extendedProfile": {
+            "localDescription": "Provision Credits Failure for user - OxygenId: RYJGQ96HNUCY, SubscriptionId: 36015078458, Error: WebServiceException: Could not send Message."
+        }
+    }
+]

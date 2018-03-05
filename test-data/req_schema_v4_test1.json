@@ -1,0 +1,12 @@
+{
+	"api_endpoint": {
+		"host": "https://enterprise-api-dev.autodesk.com",
+		"path_params": "/data/supportcase",
+		"query_params": "?where[creationDate][gt]=2017-04-18&where[creationDate][lt]=2017-04-19&size=1"
+	},
+	"api_spec": {
+		"method":"GET",
+		"array": true,
+		"insert_defaults": true
+	}
+}
